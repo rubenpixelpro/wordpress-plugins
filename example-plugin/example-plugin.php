@@ -71,6 +71,28 @@ register_uninstall_hook( __FILE__, 'myplugin_on_uninstall' );
 
 
 
+function myplugin_custom_logout() {
+
+	
+
+}
+//add_action( 'wp_logout', 'myplugin_custom_logout' );
+
+function wp_logout() {
+		wp_destroy_current_session();
+		wp_clear_auth_cookie();
+		myplugin_custom_logout();
+
+		/**
+		 * Fires after a user is logged-out.
+		 *
+		 * @since 1.5.0
+		 */
+		do_action( 'wp_logout' );
+	}
+
+
+
 
 
 
