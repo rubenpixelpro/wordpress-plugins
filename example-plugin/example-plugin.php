@@ -38,6 +38,38 @@ function myplugin_filter_hook_example( $content ) {
 add_filter( 'the_content', 'myplugin_filter_hook_example' );
 
 
+function myplugin_on_activation() {
+
+	if ( ! current_user_can( 'activate_plugins' ) ) return;
+
+	add_option( 'myplugin_posts_per_page', 10 );
+	add_option( 'myplugin_show_welcome_page', true );
+
+}
+register_activation_hook( __FILE__, 'myplugin_on_activation' );
+
+function myplugin_on_deactivation() {
+
+	if ( ! current_user_can( 'activate_plugins' ) ) return;
+
+		//wp_die('El plugin ha sido desactivado');
+
+}
+register_deactivation_hook( __FILE__, 'myplugin_on_deactivation' );
+
+function myplugin_on_uninstall() {
+
+
+	if ( ! current_user_can( 'activate_plugins' ) ) return;
+
+	delete_option( 'myplugin_posts_per_page');
+	delete_option( 'myplugin_show_welcome_page');
+	
+
+}
+register_uninstall_hook( __FILE__, 'myplugin_on_uninstall' );
+
+
 
 
 
