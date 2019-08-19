@@ -30,3 +30,25 @@ require_once plugin_dir_path( __FILE__ ) . 'admin/admin-menu.php';
 require_once plugin_dir_path( __FILE__ ) . 'admin/settings-page.php';
 require_once plugin_dir_path( __FILE__ ) . 'admin/settings-register.php';
 require_once plugin_dir_path( __FILE__ ) . 'admin/settings-callbacks.php';
+
+
+function myplugin_options_default() {
+
+	return array(
+		'custom_url'     => 'https://wordpress.org/',
+		'custom_title'   => 'Powered by WordPress',
+		'custom_style'   => 'disable',
+		'custom_message' => '<p class="custom-message">Mensaje de bienvenida</p>',
+		'custom_footer'  => 'Hola desde Pixelpro',
+		'custom_toolbar' => false,
+		'custom_scheme'  => 'default',
+	);
+
+}
+
+
+
+
+
+
+
