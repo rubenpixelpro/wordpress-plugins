@@ -19,7 +19,7 @@ function myplugin_add_toplevel_menu() {
 	);
 	
 }
-//add_action( 'admin_menu', 'myplugin_add_toplevel_menu' );
+add_action( 'admin_menu', 'myplugin_add_toplevel_menu' );
 
 function myplugin_add_sublevel_menu() {
 	
@@ -33,4 +33,4 @@ function myplugin_add_sublevel_menu() {
 	);
 	
 }
-add_action( 'admin_menu', 'myplugin_add_sublevel_menu' );
+//add_action( 'admin_menu', 'myplugin_add_sublevel_menu' );
